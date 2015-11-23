@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+### virtualization
+# Docker
+sudo pacman -Sy --noconfirm docker
+sudo systemctl enable docker
+sudo systemctl start docker
+
 ### development tools
 # the essential stuff
 sudo pacman -Sy --noconfirm base-devel
