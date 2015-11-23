@@ -7,8 +7,7 @@ def avoids(w, s):
     Return True if it does not
     """
     for l in w:
-        for c in s:
-            if c == l:
+        if l in s:
                 return False
     return True
 

@@ -1,5 +1,5 @@
 file = raw_input('filename: ')
-string = raw_input('Insert a string of forbidden characters: ')
+string = raw_input('Insert a string of available characters: ')
 
 def uses_only(w, s):
     """

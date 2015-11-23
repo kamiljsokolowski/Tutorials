@@ -1,15 +1,22 @@
 file = raw_input('filename: ')
-string = raw_input('Insert a string of forbidden characters: ')
+string = raw_input('Insert a string of characters available at least once: ')
+
+def uses_only(w, s):
+    """
+    Check if the word consists only of the characters specified in a string.
+    Return False if it does not
+    """
+    for l in w:
+        if s.find(l) == -1:
+            return False
+    return True
 
 def uses_all(w, s):
     """
     Check if each character specified in a string is used at least once.
     Return False if it does not
     """
-    for c in s:
-        if w.find(c) == -1:
-            return False
-    return True
+    return uses_only(s, w) 
 
 f = open(file)
 
