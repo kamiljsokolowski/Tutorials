@@ -5,10 +5,11 @@ test4 = ['a', 'b', 'c', 'd']
 
 def middle(l):
     """
-    Return all but first and last element of a list.
+    Return a new list containing all but first and last element of a given list.
     """
-    del l[::len(l)-1]
-    return l
+    new_l = l[:]
+    del new_l[::len(new_l)-1]
+    return new_l
 
 print middle(test1)
 print middle(test2)
