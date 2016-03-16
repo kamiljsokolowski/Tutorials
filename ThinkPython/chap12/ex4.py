@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 f = raw_input('filename [words.txt]:') or 'words.txt'
 
 #def is_anagram(ref, word):
@@ -46,6 +48,14 @@ def make_anagrams_dict(l):
             anagrams_dict[key] = anagrams_dict_raw[key]
     return anagrams_dict
 
+def sort_anagrams_dict(d):
+    return OrderedDict(sorted(d.items(), key=lambda t: len(t[1]), reverse=True))
+     
+
 if __name__ == '__main__':
-    for ref, words in make_anagrams_dict(list_words(f)).items():
+    anagrams_dict = make_anagrams_dict(list_words(f))
+#    for ref, words in make_anagrams_dict(list_words(f)).items():
+#        print ref, ':', words
+    for ref, words in sort_anagrams_dict(anagrams_dict).items():
         print ref, ':', words
+
