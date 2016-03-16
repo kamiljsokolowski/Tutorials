@@ -54,8 +54,11 @@ def sort_anagrams_dict(d):
 
 if __name__ == '__main__':
     anagrams_dict = make_anagrams_dict(list_words(f))
-#    for ref, words in make_anagrams_dict(list_words(f)).items():
+#    for ref, words in anagrams_dict:
+#        print ref, ':', words
+#    for ref, words in sort_anagrams_dict(anagrams_dict).items():
 #        print ref, ':', words
     for ref, words in sort_anagrams_dict(anagrams_dict).items():
-        print ref, ':', words
+        if len(ref) is 8:
+            print ref, ':', words
 
