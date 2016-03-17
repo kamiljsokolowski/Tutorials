@@ -3,7 +3,8 @@
 sudo apt-get update -q && sudo apt-get install -y \
     linux-image-extra-$(uname -r) \
     build-essential \
-    python-setuptools
+    python-setuptools \
+    python3-setuptools
 
 ### virtualization
 # Docker
@@ -14,9 +15,13 @@ curl -sSL https://get.docker.com | sh
 EODOCKER
 
 ### develop
-# Python
+# Python2
 bash <<EOPYTHON
 sudo easy_install pip
-sudo pip install virtualenv
 EOPYTHON
+# Python3
+bash <<EOPYTHON3
+sudo easy_install3 pip
+sudo pip install virtualenv
+EOPYTHON3
 
