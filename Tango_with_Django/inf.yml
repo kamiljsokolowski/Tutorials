@@ -1,0 +1,11 @@
+---
+- name: django
+  box: ubuntu/trusty64 
+  check_updates: false
+  net: private_network 
+  ip: 10.10.0.1
+  forward_host_port: 8000
+  forward_guest_port: 8000
+  mem: 256
+  script: bootstrap.sh
+
