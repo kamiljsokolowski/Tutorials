@@ -6,6 +6,6 @@
   ip: 10.10.0.1
   forward_host_port: 8000
   forward_guest_port: 8000
-  mem: 256
+  mem: 512
   script: bootstrap.sh
 
