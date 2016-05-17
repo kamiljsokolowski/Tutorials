@@ -1,27 +1,15 @@
 #!/usr/bin/env bash
 
+# Docker
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo add-apt-repository "deb https://apt.dockerproject.org/repo ubuntu-trusty main"
 sudo apt-get update -q && sudo apt-get install -y \
     linux-image-extra-$(uname -r) \
     build-essential \
-    python-setuptools \
-    python3-setuptools
+    apt-transport-https \
+    ca-certificates \
+    docker-engine
 
-### virtualization
-# Docker
-bash <<EODOCKER
-sudo echo aufs >> /etc/modules
+echo "aufs" |sudo tee -a /etc/modules
 sudo modprobe aufs
-curl -sSL https://get.docker.com | sh
-EODOCKER
-
-### develop
-# Python2
-bash <<EOPYTHON
-sudo easy_install pip
-EOPYTHON
-# Python3
-bash <<EOPYTHON3
-sudo easy_install3 pip
-sudo pip install virtualenv
-EOPYTHON3
 
