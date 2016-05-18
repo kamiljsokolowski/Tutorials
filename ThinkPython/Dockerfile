@@ -1,5 +1,5 @@
 # ThinkPython
-# ver 0.1
+# ver 0.2
 
 FROM ubuntu:14.04
 RUN apt-get -q update && apt-get install -y \
@@ -11,3 +11,5 @@ RUN apt-get -q update && apt-get install -y \
     && easy_install3 pip \
     && pip install virtualenv
 
+VOLUME ["/src/ThinkPython"]
+WORKDIR /src/ThinkPython
