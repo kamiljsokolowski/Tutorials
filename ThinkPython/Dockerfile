@@ -12,4 +12,4 @@ RUN easy_install pip \
 RUN pip install virtualenv
 
 VOLUME ["/src/ThinkPython"]
-WORKDIR /src/ThinkPython
+WORKDIR /workspace
